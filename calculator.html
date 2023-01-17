@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+  </head>
+  <body>
+    <div>
+    <ul >
+      <li><a href="index.html">Home</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+    </ul>
+    <span>X</span><input type="text" name="" id="X" placeholder="X" />
+    <br />
+    <span>Y</span><input type="text" name="" id="Y" placeholder="Y" />
+    <br/>
+    <button id="So" onclick="showSomme()">+</button>
+    <button id ="Sous" onclick="showSous()">-</button>
+    <button id="mul" onclick="showMultip()">*</button>
+    <button id="div" onclick="showDiv()">/</button>
+    <h3></h3>
+    </div>
+    <script>
+      let x = document.querySelector("#X");
+      let y = document.querySelector("#Y");
+      function showSomme() {
+        document.querySelector("h3").innerHTML = somme(
+          Number(x.value),
+          Number(y.value)
+        );
+      } 
+      function showSous() {
+        document.querySelector("h3").innerHTML = somme(
+          Number(x.value),
+          -Number(y.value)
+        );
+      }  
+      function showMultip() {
+        document.querySelector("h3").innerHTML = multiplication(
+          Number(x.value),
+          Number(y.value)
+        );
+      }  
+      function showDiv() {
+        if (Number(y.value)!==0){
+         document.querySelector("h3").innerHTML = multiplication(
+          Number(x.value),
+          1/Number(y.value)
+         );
+        }
+        else{
+            alert('Error: division not possible !');
+        }
+      }
+
+      
+      function somme(x, y) {
+        return "résultat de l'opération : " + (x + y);
+      }
+      function multiplication(x,y){
+        return "résultat de l'opération : " + (x * y);
+      }
+
+      
+    </script>
+  </body>
+</html>
+ 
